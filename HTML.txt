@@ -1,0 +1,649 @@
+LAB:2 HTML (TAGS)
+
+HTML TAGS (Continue)
+Centering Content
+You can use <center> tag to put any content in the center of the page or any table cell.
+Example
+<!DOCTYPE html>
+<html>
+<head>
+<title>Centring Content Example</title>
+</head>
+<body>
+<p>This text is not in the center.</p>
+<center>
+<p>This text is in the center.</p>
+</center>
+</body>
+</html>
+Horizontal Lines
+Horizontal lines are used to visually break-up sections of a document. The <hr> tag creates a line from the current position in the document to the right margin and breaks the line accordingly.
+For example, you may want to give a line between two paragraphs as in the given example below:
+Example
+<!DOCTYPE html>
+<html>
+<head>
+<title>Horizontal Line Example</title>
+</head>
+<body>
+<p>This is paragraph one and should be on top</p>
+<hr />
+<p>This is paragraph two and should be at bottom</p>
+</body>
+</html>
+Again <hr /> tag is an example of the empty element, where you do not need opening and closing tags, as there is nothing to go in between them.
+The <hr /> element has a space between the characters hr and the forward slash. If you omit this space, older browsers will have trouble rendering the horizontal line, while if you miss the forward slash character and just use <hr> it is not valid in XHTML.
+Preserve Formatting
+Sometimes, you want your text to follow the exact format of how it is written in the HTML document. In these cases, you can use the preformatted tag <pre>.
+Any text between the opening <pre> tag and the closing </pre> tag will preserve the formatting of the source document.
+Example
+<!DOCTYPE html>
+<html>
+<head>
+<title>Preserve Formatting Example</title>
+</head>
+<body>
+<pre>
+function testFunction( strText ){
+alert (strText)
+}
+</pre>
+</body>
+</html>
+This will produce the following result: function testFunction( strText ){ alert (strText) }
+Try using the same code without keeping it inside <pre>...</pre> tags
+Nonbreaking Spaces
+Suppose you want to use the phrase "12 Angry Men." Here, you would not want a browser to split the "12, Angry" and "Men" across two lines:
+An example of this technique appears in the movie "12 Angry Men."
+In cases, where you do not want the client browser to break text, you should use a nonbreaking space entity &nbsp; instead of a normal space. For example, when coding the "12 Angry Men" in a paragraph, you should use something similar to the following code:
+Example
+<!DOCTYPE html>
+<html>
+<head>
+<title>Nonbreaking Spaces Example</title>
+</head>
+<body>
+<p>An example of this technique appears in the movie "12&nbsp;Angry&nbsp;Men."</p>
+</body>
+</html>
+An HTML element is defined by a starting tag. If the element contains other content, it ends with a closing tag, where the element name is preceded by a forward slash as shown below with few tags: Start Tag Content End Tag
+ 
+
+<p>
+This is paragraph content.
+</p>
+<h1>
+This is heading content.
+</h1>
+<div>
+This is division content.
+</div>
+<br />
+So here <p>....</p> is an HTML element, <h1>...</h1> is another HTML element. There are some HTML elements which don't need to be closed, such as <img.../>, <hr /> and <br /> elements. These are known as void elements.
+HTML documents consists of a tree of these elements and they specify how HTML documents should be built, and what kind of content should be placed in what part of an HTML document.
+Nested HTML Elements
+It is very much allowed to keep one HTML element inside another HTML element:
+Example
+<!DOCTYPE html>
+<html>
+<head> 3. HTML – ELEMENTS
+<title>Nested Elements Example</title>
+</head>
+<body>
+<h1>This is <i>italic</i> heading</h1>
+<p>This is <u>underlined</u> paragraph</p>
+</body>
+</html>
+HTML – ATTRIBUTES
+An attribute is used to define the characteristics of an HTML element and is placed inside the element's opening tag. All attributes are made up of two parts: a name and a value:
+Attribute names and attribute values are case-insensitive. However, the World Wide Web Consortium (W3C) recommends lowercase attributes/attribute values in their HTML 4 recommendation.
+Example
+<!DOCTYPE html>
+<html>
+<head>
+<title>Align Attribute Example</title>
+</head>
+<body>
+<p align="left">This is left aligned</p>
+<p align="center">This is center aligned</p>
+<p align="right">This is right aligned</p>
+</body>
+</html>
+
+Core Attributes
+The four core attributes that can be used on the majority of HTML elements (although not all) are:
+	Id
+	Title
+	Class
+	Style
+The Id Attribute
+The id attribute of an HTML tag can be used to uniquely identify any element within an HTML page. There are two primary reasons that you might want to use an id attribute on an element:
+Example
+<p id="html">This para explains what is HTML</p>
+<p id="css">This para explains what is Cascading Style Sheet</p>
+
+The title Attribute
+The title attribute gives a suggested title for the element. They syntax for the title attribute is similar as explained for id attribute:
+The behavior of this attribute will depend upon the element that carries it, although it is often displayed as a tooltip when cursor comes over the element or while the element is loading.
+Example
+<!DOCTYPE html>
+<html>
+<head>
+<title>The title Attribute Example</title>
+</head>
+<body>
+<h3 title="Hello HTML!">Titled Heading Tag Example</h3>
+</body>
+</html>
+The class Attribute
+The class attribute is used to associate an element with a style sheet, and specifies the class of element. You will learn more about the use of the class attribute when you will learn Cascading Style Sheet (CSS). So for now you can avoid it.
+The value of the attribute may also be a space-separated list of class names. For example:
+class="className1 className2 className3"
+The style Attribute
+The style attribute allows you to specify Cascading Style Sheet (CSS) rules within the element.
+<!DOCTYPE html>
+<html>
+<head>
+<title>The style Attribute</title>
+</head>
+<body>
+<p style="font-family:arial; color:#FF0000;">Some text...</p>
+</body>
+</html>
+Internationalization Attributes
+There are three internationalization attributes, which are available for most (although not all) XHTML elements.
+	dir
+	lang
+	xml:lang
+The dir Attribute
+The dir attribute allows you to indicate to the browser about the direction in which the text should flow. The dir attribute can take one of two values, as you can see in the table that follows: Value Meaning
+Ltr:
+Left to right (the default value)
+Rtl:
+Right to left (for languages such as Hebrew or Arabic that are read right to left)
+Example
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+<title>Display Directions</title>
+</head>
+<body>
+This is how IE 5 renders right-to-left directed text.
+</body>
+</html>
+This is how IE 5 renders right-to-left directed text.
+When dir attribute is used within the <html> tag, it determines how text will be presented within the entire document. When used within another tag, it controls the text's direction for just the content of that tag.
+
+The lang Attribute
+The lang attribute allows you to indicate the main language used in a document, but this attribute was kept in HTML only for backwards compatibility with earlier versions of HTML. This attribute has been replaced by the xml:lang attribute in new XHTML documents.
+The values of the lang attribute are ISO-639 standard two-character language codes. Check HTML Language Codes: ISO 639 for a complete list of language codes.
+Example
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>English Language Page</title>
+</head>
+<body>
+This page is using English Language
+</body>
+</html>
+The xml:lang Attribute
+The xml:lang attribute is the XHTML replacement for the lang attribute. The value of thexml:lang attribute should be an ISO-639 country code as mentioned in previous section.
+Generic Attributes
+Here's a table of some other attributes that are readily usable with many of the HTML tags. Attribute Options Function
+
+ 
+ 
+
+If you use a word processor, you must be familiar with the ability to make text bold, italicized, or underlined; these are just three of the ten options available to indicate how text can appear in HTML and XHTML.
+Bold Text
+Anything that appears within <b>...</b> element, is displayed in bold as shown below:
+
+
+Example
+<!DOCTYPE html>
+<html>
+<head>
+<title>Bold Text Example</title>
+</head>
+<body>
+<p>The following word uses a <b>bold</b> typeface.</p>
+</body>
+</html>
+Italic Text
+Anything that appears within <i>...</i> element is displayed in italicized as shown below:
+Example
+<!DOCTYPE html>
+<html>
+<head>
+<title>Italic Text Example</title>
+</head>
+<body>
+<p>The following word uses a <i>italicized</i> typeface.</p> 5. HTML – FORMATTING
+</body>
+</html>
+Underlined Text
+Anything that appears within <u>...</u> element, is displayed with underline as shown below:
+Example
+<!DOCTYPE html>
+<html>
+<head>
+<title>Underlined Text Example</title>
+</head>
+<body>
+<p>The following word uses a <u>underlined</u> typeface.</p>
+</body>
+</html>
+Strike Text
+Anything that appears within <strike>...</strike> element is displayed with strikethrough, which is a thin line through the text as shown below:
+Example
+<!DOCTYPE html>
+<html>
+<head>
+<title>Strike Text Example</title>
+</head>
+<body>
+<p>The following word uses a <strike>strikethrough</strike> typeface.</p>
+</body>
+</html>
+Monospaced Font
+The content of a <tt>...</tt> element is written in monospaced font. Most of the fonts are known as variable-width fonts because different letters are of different widths (for example, the letter 'm' is wider than the letter 'i'). In a monospaced font, however, each letter has the same width.
+Example
+<!DOCTYPE html>
+<html>
+<head>
+<title>Monospaced Font Example</title>
+</head>
+<body>
+<p>The following word uses a <tt>monospaced</tt> typeface.</p>
+</body>
+</html>
+Superscript Text
+The content of a <sup>...</sup> element is written in superscript; the font size used is the same size as the characters surrounding it but is displayed half a character's height above the other characters.
+Example
+<!DOCTYPE html>
+<html>
+<head>
+<title>Superscript Text Example</title>
+</head>
+<body>
+<p>The following word uses a <sup>superscript</sup> typeface.</p>
+</body>
+</html>
+Subscript Text
+The content of a <sub>...</sub> element is written in subscript; the font size used is the same as the characters surrounding it, but is displayed half a character's height beneath the other characters.
+Example
+<!DOCTYPE html>
+<html>
+<head>
+<title>Subscript Text Example</title>
+</head>
+<body>
+<p>The following word uses a <sub>subscript</sub> typeface.</p>
+</body>
+</html>
+
+Inserted Text
+Anything that appears within <ins>...</ins> element is displayed as inserted text.
+Example
+<!DOCTYPE html>
+<html>
+<head>
+<title>Inserted Text Example</title>
+</head>
+<body>
+<p>I want to drink <del>cola</del> <ins>wine</ins></p>
+</body>
+</html>
+Deleted Text
+Anything that appears within <del>...</del> element, is displayed as deleted text.
+Example
+<!DOCTYPE html>
+<html>
+<head>
+<title>Deleted Text Example</title>
+</head>
+<body>
+<p>I want to drink <del>cola</del> <ins>wine</ins></p>
+</body>
+</html>
+Larger Text
+The content of the <big>...</big> element is displayed one font size larger than the rest of the text surrounding it as shown below:
+Example
+<!DOCTYPE html>
+<html>
+<head>
+<title>Larger Text Example</title>
+</head>
+<body>
+<p>The following word uses a <big>big</big> typeface.</p>
+</body>
+</html>
+Smaller Text
+The content of the <small>...</small> element is displayed one font size smaller than the rest of the text surrounding it as shown below:
+Example
+<!DOCTYPE html>
+<html>
+<head>
+<title>Smaller Text Example</title>
+</head>
+<body>
+<p>The following word uses a <small>small</small> typeface.</p>
+</body>
+</html>
+Grouping Content
+The <div> and <span> elements allow you to group together several elements to create sections or subsections of a page.
+For example, you might want to put all of the footnotes on a page within a <div> element to indicate that all of the elements within that <div> element relate to the footnotes. You might then attach a style to this <div> element so that they appear using a special set of style rules.
+Example
+<!DOCTYPE html>
+<html>
+<head>
+<title>Div Tag Example</title>
+</head>
+<body>
+<div id="menu" align="middle" >
+<a href="/index.htm">HOME</a> |
+<a href="/about/contact_us.htm">CONTACT</a> |
+<a href="/about/index.htm">ABOUT</a>
+</div>
+<div id="content" align="left" bgcolor="white">
+<h5>Content Articles</h5>
+<p>Actual content goes here.....</p>
+</div>
+</body>
+</html>
+ 
+The <span> element, on the other hand, can be used to group inline elements only. So, if you have a part of a sentence or paragraph which you want to group together, you could use the <span> element as follows
+Example
+<!DOCTYPE html>
+<html>
+<head>
+<title>Span Tag Example</title>
+</head>
+<body>
+<p>This is the example of <span style="color:green">span tag</span> and the <span style="color:red">div tag</span> alongwith CSS</p>
+</body>
+</html>
+This is the example of span tag and the div tag along with CSS 
+These tags are commonly used with CSS to allow you to attach a style to a section of a page.
+The phrase tags have been desicolgned for specific purposes, though they are displayed in a similar way as other basic tags like <b>, <i>, <pre>, and <tt>, you have seen in previous chapter. This chapter will take you through all the important phrase tags, so let's start seeing them one by one.
+Emphasized Text
+Anything that appears within <em>...</em> element is displayed as emphasized text.
+Example
+<!DOCTYPE html>
+<html>
+<head>
+<title>Emphasized Text Example</title>
+</head>
+<body>
+<p>The following word uses a <em>emphasized</em> typeface.</p>
+</body>
+</html>
+Marked Text
+Anything that appears with-in <mark>...</mark> element, is displayed as marked with yellow ink.
+Example
+<!DOCTYPE html>
+<html>
+<head>
+<title>Marked Text Example</title>
+</head>
+<body>
+<p>The following word has been <mark>marked</mark> with yellow</p>
+</body> 6. HTML – PHRASE TAGS
+</html>
+Strong Text
+Anything that appears within <strong>...</strong> element is displayed as important text.
+Example
+<!DOCTYPE html>
+<html>
+<head>
+<title>Strong Text Example</title>
+</head>
+<body>
+<p>The following word uses a <strong>strong</strong> typeface.</p>
+</body>
+</html>
+Text Abbreviation
+You can abbreviate a text by putting it inside opening <abbr> and closing </abbr> tags. If present, the title attribute must contain this full description and nothing else.
+Example
+<!DOCTYPE html>
+<html>
+<head>
+<title>Text Abbreviation</title>
+</head>
+<body>
+<p>My best friend's name is <abbr title="Abeer">Abhy</abbr>.</p>
+</body>
+</html>
+Acronym Element
+The <acronym> element allows you to indicate that the text between <acronym> and </acronym> tags is an acronym.
+At present, the major browsers do not change the appearance of the content of the <acronym> element.
+Example
+<!DOCTYPE html>
+<html>
+<head>
+<title>Acronym Example</title>
+</head>
+<body>
+<p>This chapter covers marking up text in <acronym>XHTML</acronym>.</p>
+</body>
+</html>
+Text Direction
+The <bdo>...</bdo> element stands for Bi-Directional Override and it is used to override the current text direction.
+Example
+<!DOCTYPE html>
+<html>
+<head>
+<title>Text Direction Example</title>
+</head>
+<body>
+<p>This text will go left to right.</p>
+<p><bdo dir="rtl">This text will go right to left.</bdo></p>
+</body>
+</html>
+Special Terms
+The <dfn>...</dfn> element (or HTML Definition Element) allows you to specify that you are introducing a special term. It's usage is similar to italic words in the midst of a paragraph.
+Typically, you would use the <dfn> element the first time you introduce a key term. Most recent browsers render the content of a <dfn> element in an italic font.
+Example
+<!DOCTYPE html>
+<html>
+<head>
+<title>Special Terms Example</title>
+</head>
+<body>
+<p>The following word is a <dfn>special</dfn> term.</p>
+</body>
+</html>
+Quoting Text
+When you want to quote a passage from another source, you should put it in between<blockquote>...</blockquote> tags.
+Text inside a <blockquote> element is usually indented from the left and right edges of the surrounding text, and sometimes uses an italicized font.
+Example
+<!DOCTYPE html>
+<html>
+<head>
+<title>Blockquote Example</title>
+</head>
+<body>
+<p>The following description of XHTML is taken from the W3C Web site:</p>
+<blockquote>XHTML 1.0 is the W3C's first Recommendation for XHTML, following on from earlier work on HTML 4.01, HTML 4.0, HTML 3.2 and HTML 2.0.</blockquote>
+</body>
+</html>
+XHTML 1.0 is the W3C's first Recommendation for XHTML, following on from earlier work on HTML 4.01, HTML 4.0, HTML 3.2 and HTML 2.0.
+Short Quotations
+The <q>...</q> element is used when you want to add a double quote within a sentence.
+Example
+<!DOCTYPE html>
+<html>
+<head>
+<title>Double Quote Example</title>
+</head>
+<body>
+<p> <q>I think I am wrong</q>.</p>
+</body>
+</html>
+Text Citations
+If you are quoting a text, you can indicate the source placing it between an opening <cite>tag and closing </cite> tag
+As you would expect in a print publication, the content of the <cite> element is rendered in italicized text by default.
+Example
+<!DOCTYPE html>
+<html>
+<head>
+<title>Citations Example</title>
+</head>
+<body>
+<p>This HTML tutorial is derived from <cite>W3 Standard for HTML</cite>.</p>
+</body>
+</html>
+Computer Code
+Any programming code to appear on a Web page should be placed inside <code>...</code>tags. Usually the content of the <code> element is presented in a monospaced font, just like the code in most programming books.
+Example
+<!DOCTYPE html>
+<html>
+<head>
+<title>Computer Code Example</title>
+</head>
+<body>
+<p>Regular text. <code>This is code.</code> Regular text.</p>
+</body>
+</html>
+Keyboard Text
+When you are talking about computers, if you want to tell a reader to enter some text, you can use the <kbd>...</kbd> element to indicate what should be typed in, as in this example.
+Example
+<!DOCTYPE html>
+<html>
+<head>
+<title>Keyboard Text Example</title>
+</head>
+<body>
+<p>Regular text. <kbd>This is inside kbd element</kbd> Regular text.</p>
+</body>
+</html>
+Programming Variables
+This element is usually used in conjunction with the <pre> and <code> elements to indicate that the content of that element is a variable.
+Example
+<!DOCTYPE html>
+<html>
+<head>
+<title>Variable Text Example</title>
+</head>
+<body>
+<p><code>document.write("<var>user-name</var>")</code></p>
+</body>
+</html>
+Program Output
+The <samp>...</samp> element indicates sample output from a program, and script etc. Again, it is mainly used when documenting programming or coding concepts.
+Example
+<!DOCTYPE html>
+<html>
+<head>
+<title>Program Output Example</title>
+</head>
+<body>
+<p>Result produced by the program is <samp>Hello World!</samp></p>
+</body>
+</html>
+Address Text
+The <address>...</address> element is used to contain any address.
+Example
+<!DOCTYPE html>
+<html>
+<head>
+<title>Address Example</title>
+</head>
+<body>
+<address>388A, Road No 22, Jubilee Hills - Hyderabad</address>
+</body>
+</html>
+META
+HTML lets you specify metadata - additional important information about a document in a variety of ways. The META elements can be used to include name/value pairs describing properties of the HTML document, such as author, expiry date, a list of keywords, document author etc.
+The <meta> tag is used to provide such additional information. This tag is an empty element and so does not have a closing tag but it carries information within its attributes.
+You can include one or more meta tags in your document based on what information you want to keep in your document but in general, meta tags do not impact physical appearance of the document so from appearance point of view, it does not matter if you include them or not.
+Adding Meta Tags to Your Documents
+You can add metadata to your web pages by placing <meta> tags inside the header of the document which is represented by <head> and </head> tags. A meta tag can have following attributes in addition to core attributes: Attribute Description
+Example
+Following is an example, where we are adding HTML, Meta Tags, Metadata as important keywords about the document. 7. HTML – META TAGS
+<!DOCTYPE html>
+<html>
+<head>
+<title>Meta Tags Example</title>
+<meta name="keywords" content="HTML, Meta Tags, Metadata" />
+</head>
+<body>
+<p>Hello HTML5!</p>
+</body>
+</html>
+You can use <meta> tag to give a short description about the document. This again can be used by various search engines while indexing your webpage for searching purpose.
+Example
+<!DOCTYPE html>
+<html>
+<head>
+<title>Meta Tags Example</title>
+<meta name="keywords" content="HTML, Meta Tags, Metadata" />
+<meta name="description" content="Learning about Meta Tags." />
+</head>
+<body>
+<p>Hello HTML5!</p>
+</body>
+</html>
+Document Revision Date
+You can use <meta> tag to give information about when last time the document was updated. This information can be used by various web browsers while refreshing your webpage.
+Example
+<!DOCTYPE html>
+<html>
+<head>
+<title>Meta Tags Example</title>
+<meta name="keywords" content="HTML, Meta Tags, Metadata" />
+<meta name="description" content="Learning about Meta Tags." />
+<meta name="revised" content="Tutorialspoint, 3/7/2014" />
+</head>
+<body>
+<p>Hello HTML5!</p>
+</body>
+</html>
+Document Refreshing
+A <meta> tag can be used to specify a duration after which your web page will keep refreshing automatically.
+Example
+If you want your page keep refreshing after every 5 seconds then use the following syntax.
+<!DOCTYPE html>
+<html>
+<head>
+<title>Meta Tags Example</title>
+<meta name="keywords" content="HTML, Meta Tags, Metadata" />
+<meta name="description" content="Learning about Meta Tags." />
+<meta name="revised" content="Tutorialspoint, 3/7/2014" />
+<meta http-equiv="refresh" content="5" />
+</head>
+<body>
+<p>Hello HTML5!</p>
+</body>
+</html>
+Page Redirection
+You can use <meta> tag to redirect your page to any other webpage. You can also specify a duration if you want to redirect the page after a certain number of seconds.
+
+Example
+Following is an example of redirecting current page to another page after 5 seconds. If you want to redirect page immediately then do not specify content attribute.
+<!DOCTYPE html>
+<html>
+<head>
+<title>Meta Tags Example</title>
+<meta name="keywords" content="HTML, Meta Tags, Metadata" />
+<meta name="description" content="Learning about Meta Tags." />
+<meta name="revised" content="Tutorialspoint, 3/7/2014" />
+<meta http-equiv="refresh" content="5; url=http://www.tutorialspoint.com" />
+</head>
+<body>
+<p>Hello HTML5!</p>
+</body>
+</html>
+Exercise:
+
+Construct a webpage for the Book which contain the following information
+1- Book has appropriate heading.
+2- User appropriate image of the book which links to amazon.com.
+2-Book contents are aligned
+3-Book publisher address underneath publisher heading.
+4-Web page must divide into divisions as shown in figure.
+5-Write the first page of the book in which you can use all studied HTML TAGS.
+6-Web page must have Internationalization Attributes.
+7-Web page must have meta tag which redirects to amazon.com.
+
