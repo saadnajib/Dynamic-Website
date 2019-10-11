@@ -1,0 +1,406 @@
+LAB – 04  JavaScript
+   
+Introduction
+
+JavaScript is a dynamic language that executes within a browser. JavaScript code is embedded within an HTML page using the JavaScript tag. The <script> tag is used to embed JavaScript code. JavaScript code can be embedded in:
+
+An external file
+The header of the page The body of the page
+
+In this example, JavaScript is embedded within the header. As soon as the page is loaded this code is executed.
+
+
+The Document write method displays the text.
+
+Notice that the JavaScript code is enclosed in HTML comment tags:
+ 
+
+These are often used to surround JavaScript code. In older browsers JavaScript was not recognized or handled. To avoid the display of this code in a page, the browser would ignore the contents of the comment. However, in a browser that supports JavaScript the comments tags are ignored and the code is executed.
+
+Internal JavaScript Code
+JavaScript code that is not found in a function is executed as the page containing it is loaded. To illustrate this, JavaScript code is placed in the head and body section of an HTML page.
+
+
+<html>
+<head>
+<title>JavaScript Example</title>
+<script type="text/javascript">
+document.write("Execute during page load from the head<br>");
+</script>
+</head>
+<body>
+<script type="text/javascript">
+document.write("Execute during page load from the body<br>");
+</script>
+</body>
+</html>
+
+
+JavaScript code found in a function is not executed until the function is called. If we modify the previous example by adding a function to return a string, the function is not loaded when the page is loaded.
+
+<html>
+<head>
+<title>JavaScript Example</title>
+<script type="text/javascript"> 
+function displayString() {
+return "<h1>Main Heading<h1>"
+}
+document.write("Execute during page load from the head<br>");
+</script>
+</head>
+<body>
+<script type="text/javascript">
+document.write("Execute during page load from the body<br>");
+</script>
+</body>
+</html>
+
+The output will be the same.
+
+Functions
+
+A function consists of the function keyword followed by the name of the function , a set of open and close parentheses enclosing an optional parameter list and a body enclosed in a set of curly braces.
+
+function functionName(parameterList) {
+// body
+}
+
+A function uses the return keyword to return a value from a function.
+
+
+<html>
+<head>
+<title>JavaScript Example</title>
+<script type="text/javascript"> function getHeader() {
+return "<h1>Main Heading</h1>"
+}
+</script>
+</head>
+
+<body>
+<script type="text/javascript"> document.write(getHeader());
+</script>
+</body>
+
+</html>
+
+
+Parameters are separated by commas in the function declaration.
+
+<html>
+<head>
+<title>JavaScript Example</title>
+<script type="text/javascript"> function multiply(num1, num2) {
+return num1*num2;
+}
+</script>
+</head>
+
+<body>
+<script type="text/javascript"> document.write(multiply(2,4));
+</script>
+</body>
+
+</html>
+
+
+External JavaScript Code
+
+It is advantageous to group common functions in an external JavaScript file. This permits the reuse of the functions in the file in multiple HTML pages.
+
+JavaScript functions are stored in a file using the .js extension. If we placed the following functions in a file named scripts.js we can reference and subsequently use the functions from an HTML page.
+
+// functions.js
+function getHeader() {
+return "<h1>Main Heading</h1>"
+}
+
+function multiply(num1, num2) { return num1*num2;
+}
+
+Notice that the C++ style comment can be used in JavaScript. Also notice that the <script> tag is not and should not be used in a JavaScript file.
+
+In the HTML file, the <script> tag can also be used to indicate the location of a JavaScript file. The src attribute is assigned the path and filename of the file.
+
+
+<html>
+<head>
+<title>JavaScript Example</title>
+<script type="text/javascript" src="functions.js">
+</script>
+</head>
+
+<body>
+<script type="text/javascript"> document.write(multiply(2,4));
+</script>
+</body>
+
+</html>
+
+
+<script> Attributes
+
+There are two attributes of the <script> tag that are of immediate interest:
+
+    type –    The value assigned to this attribute specifies the scripting language      
+    src – The location of an external scripting file
+The src attribute specifies that the code is actually found in a file which should be loaded and then executed. The .js extension is normally used for JavaScript code files. The following example illustrates the use of these attributes.
+
+
+JavaScript Language Elements
+It is useful to discuss JavaScript in terms of language elements including: Variables
+Operators
+Expressions Statements Objects
+Functions and methods
+
+
+Data Types
+
+Data types must not be declared we just define them. JavaScript recognizes the following types of values:
+
+numbers, such as 18 or 2.81
+
+logical (boolean) values, either true or false
+
+strings such as willi. The String literal is zero or more characters enclosed in double " or single ’ quotation marks.
+
+null (null value). a special keyword denoting a null value. null is also a primitive value. Since JavaScript is case sensitive, null is not the same as Null, NULL, or any other variants. The null value behaves as 0 in numeric context and as false in boolean context.
+
+undefined, a top-level property whose value is undefined. undefined is also a prim- itive value.
+
+Operators
+The JavaScript operators include:
+
+Precedence	Operator	Associativity	Meaning
+1	member	Left-to-right	.
+			[]
+	new	Right-to-left	new
+2	function call	Left-to-right	()
+3	++	n/a	Increment by 1
+	--		Decrement by 1
+4	!	Right-to-left	logical not
+	~		bitwise not
+	+		unary plus
+	-		unary minus
+	typeof		type of
+	void		void
+	delete		delete
+5	*	Left-to-right	Multiplication
+	/		Division
+	%		Modulo division
+6	+	Left-to-right	addition
+	-		subtraction
+7	<<	Left-to-right	shift left
+	>>		shift right
+	>>>		arithmetic shift right
+8	>	Left-to-right	Greater than
+	>=		Greater than or equal
+	<		Less than
+	<=		Less than or equal
+Precedence	Operator	Associativity	Meaning
+9	= =	Left-to-right	equality
+	!=		not equal
+	= = =		strict equality
+	!= =		strict inequality
+10	&	Left-to-right	bitwise and
+11	^	Left-to-right	bitwise xor
+12	|	Left-to-right	bitwise or
+13	&&	Left-to-right	logical and
+14	||	Left-to-right	logical or
+15	(condition)?value1:value2	Right-to-left	tertiary operator
+16	=	Right-to-left	assignment
+	+=		
+	-=		
+	*=		
+	/=		
+	%=		
+	<<=		
+	>>=		
+	>>>=		
+	&=		
+	^=		
+	|=		
+17	,	Left-to-right	comma operator
+Arrays
+
+Arrays are allocated using the new keyword.
+
+
+Array indexes start at 0 and extend to the size of the array minus 1. To assign a value to an element of an array open and close brackets are used.
+
+
+The size of an array can be increased dynamically by assigning a value to an element pass the end of the array. Array can be created that initially has no elements at all. In addition, they are not of a fixed size but can grow dynamically.
+
+
+The array, pictures, initially has no elements. After "Mona Lisa" has been assigned the array has 36 elements. The unassigned elements are set to Undefined.
+
+The length property of arrays returns the number of elements in the array. 
+
+ 
+ 
+Converting Between Data Types
+
+There are a number of techniques for converting between data types. To convert from a string several parse and other functions are available.
+
+parseFloat – Converts a string to a float parseInt – Converts a string to an integer Number – Converts a string to a number
+
+The last example below uses an arithmetic expression to implicitly convert the string to a number. 
+
+
+A number can be converted to a string or Boolean using the String and Boolean functions.
+
+
+Math Object
+
+The JavaScript Math object provides several properties and methods that can be useful.
+
+Method	Description
+abs(x)	Returns the absolute value of x
+acos(x)	Returns the arccosine of x (radians)
+asin(x)	Returns the arcsine of x, in (radians)
+atan(x)	Returns the arctangent of x as a value
+atan2(y,x)	Returns the arctangent of the quotient of its arguments
+ceil(x)	Returns x, rounded upwards to the nearest integer
+cos(x)	Returns the cosine of x (radians)
+exp(x)	Returns the value of Ex
+floor(x)	Returns x, rounded downwards to the nearest integer
+log(x)	Returns the natural logarithm (base E) of x
+max(x,y,z,...,n)	Returns the number with the highest value
+min(x,y,z,...,n)	Returns the number with the lowest value
+pow(x,y)	Returns the value of x to the power of y
+random()	Returns a random number between 0 and 1
+round(x)	Rounds x to the nearest integer
+sin(x)	Returns the sine of x (radians)
+sqrt(x)	Returns the square root of x
+tan(x)	Returns the tangent of an angle
+For example, to compute the area of a circle use the 
+function: 
+
+function areaOfACircle(radius) {
+return Math.PI*radius*radius;
+}
+
+
+JavaScript Objects
+
+There exist a number of predefined objects associated with the web browser and the HTML document loaded. Each of these objects has certain properties associated with them.
+
+Document	Input Password
+Events	Input Radio
+Elements	Input Reset
+Anchor	Input Submit
+Area	Input Text
+Base	Link
+Body	Meta
+Button	Object
+Form	Option
+Frame/IFrame	Select
+Frameset	Style
+Image	Table
+Input Button	TableCell
+nput Checkbox	TableRow
+Input File	Textarea
+Input Hidden	
+
+An object frequently consists of sub elements which are separated by periods.
+
+
+Objects also can have methods which are distinguished from properties by the use of the open and close parentheses. Here the values associated with the first form are reset.
+
+document.forms[0].reset();
+
+
+Window
+
+The window object can be used to create new windows and dialog boxes and includes these method:
+
+Open – Opens a new window Close – Closes the window
+alert – Displays an alert message box confirm – Displays a confirms dialog box prompt – Displays a prompt dialog box
+It also possesses several properties including: document – Returns the Document object
+innerHeight – The height of the content area of the window
+innerWidth – The width of the content area of the window outerHeight – The height or the window including toolbars outerWidth – The width of the window
+
+
+Alert Message Box
+
+The alert message box displays a simple message.
+ alert('An Alert Message');
+
+ 
+
+Confirm Dialog Box
+
+The confirm dialog box displays a confirm type message and then either returns a true or false value depending on which button is pressed.
+
+var result = confirm("Continue?"); 
+document.write(result);
+
+  
+
+If Cancel is selected, false is returned. 
+
+Prompt Dialog Box
+
+The prompt dialog box provides a way of getting input from the user. The prompt function has two arguments. The first is the prompt message and the second is a default value if any.
+
+var result = prompt("Name:",""); 
+document.write(result);
+
+
+The value returned is the value entered by the user.
+Document
+
+The Document object provides access to all of the HTML elements of the current page. Useful properties include:
+
+cookie – Will return name/value pairs of the cookies used by the document domain – Returns the domain name of the server
+title – Returns or set the title
+URL – Returns the URL of the document.
+
+In addition, it consists of a series of array that hold the contents of the page. These objects can be accessed and modified. For example, the forms array contains a list of all of the forms that make up a page. Here the first form is selected. The value of the third element of the form is returned.
+
+
+
+URL Property
+
+The URL property is easy to use. 
+document.write(document.URL); 
+
+ 
+JavaScript Events
+
+Many elements of DOM support events. These events are normally the result of some user actions.
+
+Event	Meaning
+onload	Occurs when a window or frame has loaded
+onunload	Occurs when a document is removed from a window or frame
+onclick	The mouse is clicked on an element
+ondblclick	The double click event
+onmousedown	Mouse down event
+onmouseup	Mouse up event
+onmouseover	Mouse moves onto an element
+onmousemove	Mouse moves over an element
+onmouseout	Mouse leaves an element
+onfocus	Element receives focus
+onblur	Element loses focus
+onkeypress	Key press event
+onkeydown	Key is pressed down
+onkeyup	Key is released
+onsubmit	Submit button is pressed
+onreset	Form reset event occurs
+onselect	Some text in an element is selected
+onchange	Element loses focus and its value changes
+
+onClick Example
+
+Task:
+
+1.	Include two java script files and use it in a single HTML file.
+2.	Write the HTML tag in array and use it into Script tag.
+3.	Use the following events in code.
+a.	onLoad
+b.	onUnload
+c.	onkeypress
+4.	Write a code in which input is taken by user in integer, store these values in an array. Apply linear search and bubble sort on user input.
+5.	Convert the pervious lab task #2 HTML & style sheet to javascript, therefore all the display on webpage would be based on script.
+6.	Add a new button with text "Previous" to the page. By pressing this button it must be possible to view the previous image. You can add the new button into the same <div> element where the Next button is defined. You'll need a new JavaScript function for the new button. The name of the new function could be show_previous_picture()
+
