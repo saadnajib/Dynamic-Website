@@ -1,0 +1,231 @@
+Tasks
+1.	Construct the following tables structure by using HTML Tags.
+ 
+Code:
+1.
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<link href="Lab 2.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<table id="ttt" cellpadding="15" border="1" >
+<tr>
+<td>1</td>
+<td rowspan="2">2</td>
+<td>3</td>
+</tr>
+<tr>
+<td>4</td>
+<td>6</td>
+</tr>
+<tr>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+</tr>
+</table>
+</body>
+</html>
+2.
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<link href="Lab 2.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+
+<table style="border-style:solid;" id="ttt" cellpadding="15" border="1" >
+
+<tr>
+<td colspan="5" style="text-align:center;"> Table Heading </td>
+</tr>
+
+<tr>
+<td>Course</td>
+<td>Tutor</td>
+<td>Summary</td>
+<td>Code</td>
+<td>Fee</td>
+</tr>
+<tr>
+<td>4</td>
+<td>9</td>
+<td>7</td>
+<td>6</td>
+<td>4</td>
+</tr>
+<tr>
+<td>7</td>
+<td>8</td>
+<td>9</td>
+<td>19</td>
+<td>29</td>
+</tr>
+<tr>
+<td>57</td>
+<td>88</td>
+<td>29</td>
+<td>129</td>
+<td>279</td>
+</tr>
+
+
+
+</table>
+</body>
+</html>
+2.	Make list by using different <ol> types.
+Code:
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<link href="Lab 2.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<ol>
+<li>Minhaj</li>
+<li>Rahib</li>
+<li>Shahzeeb</li>
+<li>Raheel</li>
+</ol>
+<ol>
+<li>Ali</li>
+<li>Tayyab</li>
+<li>Jacob</li>
+<li>Robert</li>
+</ol>
+</body>
+</html>
+ 
+3.	Develop external style sheet through which following web page would be able to construct.
+ 
+Code:
+HTML
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<link href="Lab 2.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="divoop">
+<div id="top">
+<div id="tp1">
+<h1 style="color:#ffffff;  margin-top:0px; margin-left:10px; padding-top:30px;">My First Website</h1>
+</div>
+<div id="tp2">
+<div id="small"><p style="text-align:center; color:Orange; font-size:24px; font-weight:bold;">Home</p></div>
+<div id="small1"><p style="text-align:center; color:Orange; font-size:24px; font-weight:bold;">About</p></div>
+<div id="small2"><p style="text-align:center; color:Orange; font-size:24px; font-weight:bold;">Contact</p></div>
+</div>
+</div>
+
+
+
+<div id="mid">
+<h4 style="color:#ffffff;  margin-top:0px; margin-left:10px; padding-top:10px;" >Home</h4>
+<p style="color:#ffffff;  margin-top:0px; margin-left:10px; padding-top:5px;">
+Paragraphs are the building blocks of papers. Many students define paragraphs in terms of length: a paragraph is a group of at least five sentences, a paragraph is half a page long, etc. In reality, though, the unity and coherence of ideas among sentences is what constitutes a paragraph. A paragraph is defined as “a group of sentences or a single sentence that forms a unit” (Lunsford and Connors 116). Length and appearance do not determine whether a section in a paper is a paragraph. For instance, in some styles of writing, particularly journalistic styles, a paragraph can be just one sentence long. Ultimately, a paragraph is a sentence or group of sentences that support one main idea. In this handout, we will refer to this as the “controlling idea,” because it controls what happens in the rest of the paragraph.
+</p>
+</div>
+<p style="color:#ffffff; text-align:left;  margin-top:6px; margin-left:80%; padding-top:5px;">Web page Made By Minhaj Ahmed</p>
+</div>
+</body>
+</html>
+CSS
+@charset "utf-8";
+/* CSS Document */
+
+body{
+margin:0;
+	}
+
+#divoop{
+	width:100%;
+	height:300px;
+	background-color:#333;
+}
+
+#top{
+	width:100%;
+	height:95px;
+	background-color:Tomato;
+	margin:0;
+	padding:0;
+	}
+
+#mid{
+	
+	width:100%;
+	height:155px;
+	background-color:Orange;
+	margin-top:15px;
+	padding:0;
+	}
+
+#tp1{
+	width:40%;
+	height:95%;
+	/*border-right:1px solid #ffffff;*/
+	float:left;
+	}
+#tp2{
+	width:60%;
+	height:95%;
+	float:left;
+	}
+	
+	#small{
+		
+		width:15%;
+		height:75%;
+		background-color:#ffffff;
+		margin-top:1.6%;
+		margin-left:45%;
+		float:left;	
+		}
+		#small1{
+		
+		width:15%;
+		height:75%;
+		background-color:#ffffff;
+		margin-top:1.6%;
+		margin-left:2%;
+		float:left;
+		
+		}
+			#small2{
+		width:15%;
+		height:75%;
+		background-color:#ffffff;
+		margin-top:1.6%;
+		margin-left:2%;
+		float:left;
+		}
+ 
+
+ 
+The major disadvantages of using frames are:
+•         Bookmarks only bookmark the top level pages (the framesets themselves). A user is unable to bookmark any of the Web pages viewed within a frame.
+•         Frames can make the production of a website complicated, although current software addresses this problem.
+•         It is easy to create badly constructed websites using frames. The most common mistake is to include a link that creates duplicate Web pages displayed within a frame.
+•         Search engines that reference a Web page only give the address of that specific document. This means that search engines might link directly to a page that was intended to be displayed within a frameset.
+•         Users have become so familiar with normal navigation using tables, the back button, and so on, that navigating through a site that uses frames can be a problem.
+•         The use of too many frames can put a high workload on the server. A request for, say, ten files, each 1 Kilobyte in size, requires a greater workload than a request for a single 10 Kilobyte file.
+•         Older browsers do not support frames.
+The advantages of HTML frames include:
+•         The main advantage of frames is that it allows the user to view multiple documents within a single Web page.
+•         It is possible to load pages from different servers in a single frameset.
+•         The concern that older browsers do not support frames can be addressed using the <noframe> tag. This tag provides a section in an HTML document to include alternative content for browsers without support for frames. However, it requires that the Web designer provide two formats for one page.
+•         Differing foreground colors, background colors, and background images can be displayed in different frames, with a light-colored fore-ground against a dark-colored background in one frame and the reverse in another frame, for example.
+•         Frames can make it easier for users to navigate a multi-page Web site, in that menus and tables of contents can remain visible at all times within their own frame, while content is switched in and out of a separate main content frame.
+
