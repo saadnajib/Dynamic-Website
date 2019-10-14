@@ -1,0 +1,66 @@
+//Task 2
+
+Stored Procedure
+ALTER PROCEDURE dbo.StoredProcedure3
+
+@email Varchar (20),
+@Pass varchar (10)
+
+as
+Begin
+Select COUNT(*)from table1 where email=@email and pas=@Pass 
+End
+	RETURN
+
+
+//Web form1
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using System.Data;
+using System.Web.Configuration;
+
+namespace lab7web
+{
+    public partial class login : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        public string GetConnectionString()
+        {
+            return System.Configuration.ConfigurationManager.ConnectionStrings["ConnectionString1"].ConnectionString;
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            if (TextBox1.Text == "" || TextBox2.Text == "")
+            {
+                Label2.Visible = true;
+                Label2.Text = " Enter Email/Passowrd";
+            }
+            else
+            {
+                SqlConnection conn = new SqlConnection(GetConnectionString());
+
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand("StoredProcedure3", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@email", TextBox1.Text.ToString());
+                    cmd.Parameters.AddWithValue("@Pass", TextBox2.Text.ToString());
+                    
+                int usercount = (Int32)cmd.ExecuteScalar();
+                    if (usercount == 1)                      {
+                        Response.Redirect("welcome.aspx"); 
+                    }
+                    else
+                    {
+                        conn.Close();
+                        Label1.Text = "Invalid User Name or Password"; 
+                    }}}}}
